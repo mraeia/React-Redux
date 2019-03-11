@@ -1,8 +1,13 @@
-const addToList = (element) => {
+export const addToList = (element) => {
     return {
         type: "ADD_TO_LIST",
         payload: element
     }
 }
 
-export default addToList;
+export const elementClick = (element) => {
+    return {
+        type: "ELEMENT_SELECTED",
+        payload: element
+    }
+}

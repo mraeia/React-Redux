@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import addToList from './actions';
+import {addToList} from './actions';
 import { connect } from 'react-redux';
 
 class Form extends Component {
