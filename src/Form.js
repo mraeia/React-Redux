@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import {addToList} from './actions';
 import { connect } from 'react-redux';
 
@@ -23,13 +22,15 @@ class Form extends Component {
     }
 
     handleSubmit(event) {
-        this.props.addToList({name: this.state.name, age:this.state.age})
+        if (this.state.name !== '' && this.state.age !== ''){
+            this.props.addToList({name: this.state.name, age:this.state.age})
+        }
         event.preventDefault();
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="ten wide column">
                 <label>
                     Name:
                 <input type="text" value={this.state.name} onChange={this.handleNameChange} />
