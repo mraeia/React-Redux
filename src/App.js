@@ -9,12 +9,6 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e){
-    console.log("hello!");
-    e.preventDefault();
   }
 
   render() {
@@ -34,9 +28,6 @@ class App extends Component {
           )}
           </div>
         </div>
-        <button onClick={this.handleClick}>
-          Click me!
-        </button>
       </div>
     );
   }
