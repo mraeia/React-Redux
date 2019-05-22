@@ -9,9 +9,9 @@ class ShowElement extends Component{
             label = this.props.selectedElement.name
         }
         return(
-            <div>
+            <h3>
                 {label}
-            </div>
+            </h3>
         )
     }
 }

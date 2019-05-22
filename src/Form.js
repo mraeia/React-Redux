@@ -33,13 +33,17 @@ class Form extends Component {
             <form onSubmit={this.handleSubmit} className="ten wide column">
                 <label>
                     Name:
-                <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+                <div className="ui input">
+                    <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+                </div>
                 </label>
                 <label>
                     Age:
-                <input type="number" value={this.state.age} onChange={this.handleAgeChange} />
+                <div className="ui input">
+                    <input type="number" value={this.state.age} onChange={this.handleAgeChange} />
+                </div>
                 </label>
-                <input type="submit" value="Submit" />
+                <input className="ui button" type="submit" value="Submit" />
             </form>
         );
     }
