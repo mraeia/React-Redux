@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as formRdeucer } from 'redux-form';
 
 
 var initialList = [
@@ -25,7 +26,17 @@ const selectElementReducer = (element = null,action) => {
     return element;
 }
 
+const authChangeReducer = (Auth = null,action) =>{
+    if (action.type === 'AUTH_CHANGED'){
+        return action.payload
+    }
+
+    return Auth;
+}
+
 export default combineReducers({
     list: listReducer,
-    selectedElement: selectElementReducer
+    selectedElement: selectElementReducer,
+    signInState: authChangeReducer,
+    form: formRdeucer
 });

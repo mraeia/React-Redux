@@ -11,3 +11,10 @@ export const elementClick = (element) => {
         payload: element
     }
 }
+
+export const onAuthChange = (Auth) => {
+    return {
+        type: "AUTH_CHANGED",
+        payload: Auth
+    }
+}
