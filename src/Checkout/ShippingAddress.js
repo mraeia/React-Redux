@@ -1,28 +1,23 @@
 import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
+import ShippingAddressForm from './ShippingAddressForm'
 
 class ShippingAddress extends Component{
 
-    getForm = () => {
+    getBody = () => {
         if (this.props.status === 'IN_PROGRESS'){
             return (
-            <CSSTransitionGroup
-                transitionName="example"
-                transitionAppear={true}
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}>
-                <div key="shippingAddress" className="checkoutForm">
-                    IN_PROGESS
+                <div key="shippingAddress">
+                    <ShippingAddressForm/>
                     <div>
                         <button onClick={this.props.submitShipping}>Continue</button>
                     </div>
                 </div>
-            </CSSTransitionGroup>
             )
         }
-        else if (this.props.status === 'COMPLETED'){
+        else if (this.props.status === 'COMPLETED' || this.props.status === 'NOT_COMPLETED'){
             return (
-                <button onClick={this.props.submitShipping}>Edit</button>
+                <button onClick={() => this.props.edit('shippingAddress')}>Edit</button>
             )
         }
         else {
@@ -31,11 +26,20 @@ class ShippingAddress extends Component{
     }
 
     render(){
-        var form = this.getForm();
+        console.log(this.props);
+        var form = this.getBody();
         return(
             <div>
-                Step 1
-                {form}
+                <h2>Step 1</h2>
+                <CSSTransitionGroup
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionLeave={true}
+                    transitionEnterTimeout={3000}
+                    transitionLeaveTimeout={3000}
+                    transitionAppearTimeout={3000}>
+                    {form}
+                </CSSTransitionGroup>
             </div>
         );
     }

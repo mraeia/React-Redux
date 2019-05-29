@@ -1,0 +1,6 @@
+export const Statuses = {
+    IN_PROGRESS: "IN_PROGRESS",
+    NOT_STARTED: "NOT_STARTED",
+    NOT_COMPLETED: "NOT_COMPLETED",
+    COMPLETED: "COMPLETED"
+}

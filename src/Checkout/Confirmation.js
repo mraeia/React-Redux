@@ -4,7 +4,9 @@ class Confirmation extends Component{
     render(){
         return(
             <div>
-                Step 3
+                <h2>
+                    Step 3
+                </h2>
             </div>
         )
     }
