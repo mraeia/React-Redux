@@ -28,7 +28,7 @@
 }
 
 .fade-leave.fade-leave-active {
-    transform: translateY(-100%);
+    transform: translateY(100%);
     opacity: 0.01;
     transition: all 0.5s ease-in-out;
 }
@@ -42,4 +42,8 @@
     transform: translateY(0%);
     opacity: 1;
     transition: all 0.5s ease-in-out;
+}
+
+.body{
+    margin-top:40px;
 }

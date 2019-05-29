@@ -68,13 +68,15 @@ class App extends Component {
           <h4 id="header">
               Welcome {this.props.signInState ? this.props.signInState.userGivenName : null}!
           </h4>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/checkout" exact component={Checkout} />
-            <Route path="/streams/new" exact component={StreamCreate} />
-            {/* <Route path="/fetch" exact component={Fetch} /> */}
-            <Route render={() => <h1>Page not found</h1>} />
-          </Switch>
+          <div className="body">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/checkout" exact component={Checkout} />
+              <Route path="/streams/new" exact component={StreamCreate} />
+              {/* <Route path="/fetch" exact component={Fetch} /> */}
+              <Route render={() => <h1>Page not found</h1>} />
+            </Switch>
+          </div>
         </div>
       </BrowserRouter>
     );
