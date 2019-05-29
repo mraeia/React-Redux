@@ -26,7 +26,6 @@ class ShippingAddress extends Component{
     }
 
     render(){
-        console.log(this.props);
         var form = this.getBody();
         return(
             <div>
@@ -35,9 +34,9 @@ class ShippingAddress extends Component{
                     transitionName="fade"
                     transitionAppear={true}
                     transitionLeave={true}
-                    transitionEnterTimeout={3000}
-                    transitionLeaveTimeout={3000}
-                    transitionAppearTimeout={3000}>
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}
+                    transitionAppearTimeout={500}>
                     {form}
                 </CSSTransitionGroup>
             </div>

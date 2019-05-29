@@ -12,29 +12,34 @@
 }
 
 .fade-appear {
-    opacity: 0.01;
-
+    transform: translateY(-100%);
+    opacity: 0.01
 }
 
 .fade-appear.fade-appear-active {
+    transform: translateY(0%);
     opacity: 1;
-    transition: opacity 3000ms ease;
+    transition: all 0.5s ease-in-out;
 }
 
 .fade-leave {
-    opacity: 1;
+    transform: translateY(0%);
+    opacity: 1
 }
 
 .fade-leave.fade-leave-active {
-    opacity: 0;
-    transition: opacity 3000ms ease;
+    transform: translateY(-100%);
+    opacity: 0.01;
+    transition: all 0.5s ease-in-out;
 }
 
 .fade-enter {
-    opacity: 0.01;
+    transform: translateY(-100%);
+    opacity: 0.01
 }
 
 .fade-enter.fade-enter-active {
+    transform: translateY(0%);
     opacity: 1;
-    transition: height 3000ms ease;
+    transition: all 0.5s ease-in-out;
 }

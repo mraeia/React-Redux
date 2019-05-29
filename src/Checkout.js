@@ -46,7 +46,7 @@ class Checkout extends Component {
     render(){
         return (
             <div>
-                <ShippingAddress status={this.state.shippingAddress} submitShipping={this.submitShipping} editShipping={this.edit}/>
+                <ShippingAddress status={this.state.shippingAddress} submitShipping={this.submitShipping} edit={this.edit}/>
                 <PaymentCard status={this.state.paymentCard} submitPayment={this.submitPayment} edit={this.edit}/>
                 <Confirmation status={this.state.Confirmation}/>
             </div>

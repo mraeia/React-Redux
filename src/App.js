@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { elementClick } from './actions';
 import { BrowserRouter,Link,Route,Switch} from 'react-router-dom';
 import Home from './Home';
-import Contact from './Contact';
 import GoogleAuth from './GoogleAuth';
 import StreamCreate from './StreamCreate';
+import Checkout from './Checkout';
 //import Fetch from './Fetch';
 
 class App extends Component {
@@ -28,8 +28,8 @@ class App extends Component {
       case "home":
         e = document.getElementById('home')
         break
-      case "contact":
-        e = document.getElementById('contact')
+      case "checkout":
+        e = document.getElementById('checkout')
         break
       case "create-stream":
         e = document.getElementById('create-stream')
@@ -50,8 +50,8 @@ class App extends Component {
             <Link id="home" className="item" to="/" onClick={() => this.setState({active : "home"})}>
               Home
             </Link>
-            <Link id="contact" className="item" to="/contact" onClick={() => this.setState({active : "contact"})}>
-              Contact
+            <Link id="checkout" className="item" to="/checkout" onClick={() => this.setState({active : "checkout"})}>
+              Checkout
             </Link>
             <Link id="create-stream" className="item" to="/streams/new" onClick={() => this.setState({active : "create-stream"})}>
               Create Stream
@@ -70,7 +70,7 @@ class App extends Component {
           </h4>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/contact" exact component={Contact} />
+            <Route path="/checkout" exact component={Checkout} />
             <Route path="/streams/new" exact component={StreamCreate} />
             {/* <Route path="/fetch" exact component={Fetch} /> */}
             <Route render={() => <h1>Page not found</h1>} />
@@ -87,8 +87,8 @@ class App extends Component {
       case "/":
         this.setState({active : "home"})
         break
-      case "/contact":
-        this.setState({active : "contact"})
+      case "/checkout":
+        this.setState({active : "checkout"})
         break
       case "/streams/new":
         this.setState({active : "create-stream"})
