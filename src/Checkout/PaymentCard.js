@@ -27,14 +27,14 @@ class PaymentCard extends Component{
     render(){
         var form = this.getForm();
         return(
-            <div>
+            <div className="checkout-steps">
                 <h2>Step 2</h2>
                 <CSSTransitionGroup
                     transitionName="fade"
                     transitionAppear={true}
                     transitionLeave={true}
                     transitionEnterTimeout={500}
-                    transitionLeaveTimeout={500}
+                    transitionLeaveTimeout={250}
                     transitionAppearTimeout={500}>
                     {form}
                 </CSSTransitionGroup>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { connect } from 'react-redux';
 import { elementClick } from './actions';
 import { BrowserRouter,Link,Route,Switch} from 'react-router-dom';

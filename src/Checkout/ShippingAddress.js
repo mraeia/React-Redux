@@ -28,14 +28,14 @@ class ShippingAddress extends Component{
     render(){
         var form = this.getBody();
         return(
-            <div>
+            <div className="checkout-steps">
                 <h2>Step 1</h2>
                 <CSSTransitionGroup
                     transitionName="fade"
                     transitionAppear={true}
                     transitionLeave={true}
                     transitionEnterTimeout={500}
-                    transitionLeaveTimeout={500}
+                    transitionLeaveTimeout={250}
                     transitionAppearTimeout={500}>
                     {form}
                 </CSSTransitionGroup>
