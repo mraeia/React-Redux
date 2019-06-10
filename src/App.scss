@@ -11,40 +11,31 @@
     margin: 0 auto;
 }
 
-.fade-appear {
-    transform: translateY(-100%);
-    opacity: 0.01
-}
-
-.fade-appear.fade-appear-active {
-    transform: translateY(0%);
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-}
-
-.fade-leave {
-    opacity: 1
-}
-
-.fade-leave.fade-leave-active {
-    opacity: 0.01;
-    transition: opacity 0.25s ease-in-out;
-}
-
-.fade-enter {
-    transform: translateY(-100%);
-    opacity: 0.01
-}
-
-.fade-enter.fade-enter-active {
-    transform: translateY(0%);
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-}
-
 .body{
     margin-top:40px;
     .checkout-steps{
         margin-bottom:30px;
+    }
+
+    .fade-appear {
+        transform: translateY(-10%);
+        opacity: 0.01
+    }
+    
+    .fade-appear.fade-appear-active {
+        transform: translateY(0%);
+        opacity: 1;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .fade-enter {
+        transform: translateY(-10%);
+        opacity: 0.01
+    }
+    
+    .fade-enter.fade-enter-active {
+        transform: translateY(0%);
+        opacity: 1;
+        transition: all 500ms ease-in-out;
     }
 }

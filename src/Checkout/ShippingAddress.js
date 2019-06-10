@@ -17,7 +17,7 @@ class ShippingAddress extends Component{
         }
         else if (this.props.status === 'COMPLETED' || this.props.status === 'NOT_COMPLETED'){
             return (
-                <button onClick={() => this.props.edit('shippingAddress')}>Edit</button>
+                <button key="shippingAddressEdit" onClick={() => this.props.edit('shippingAddress')}>Edit</button>
             )
         }
         else {
@@ -29,13 +29,12 @@ class ShippingAddress extends Component{
         var form = this.getBody();
         return(
             <div className="checkout-steps">
-                <h2>Step 1</h2>
+                <h2>Step 1 - Shipping Address</h2>
                 <CSSTransitionGroup
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionLeave={true}
+                    transitionLeave={false}
                     transitionEnterTimeout={500}
-                    transitionLeaveTimeout={250}
                     transitionAppearTimeout={500}>
                     {form}
                 </CSSTransitionGroup>

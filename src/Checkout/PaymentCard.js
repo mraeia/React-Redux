@@ -16,7 +16,7 @@ class PaymentCard extends Component{
         }
         else if (this.props.status === 'COMPLETED'|| this.props.status === 'NOT_COMPLETED'){
             return (
-                <button onClick={() => this.props.edit('paymentCard')}>Edit</button>
+                <button key="paymentCardEdit" onClick={() => this.props.edit('paymentCard')}>Edit</button>
             )
         }
         else {
@@ -28,13 +28,12 @@ class PaymentCard extends Component{
         var form = this.getForm();
         return(
             <div className="checkout-steps">
-                <h2>Step 2</h2>
+                <h2>Step 2 - Payment Card</h2>
                 <CSSTransitionGroup
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionLeave={true}
+                    transitionLeave={false}
                     transitionEnterTimeout={500}
-                    transitionLeaveTimeout={250}
                     transitionAppearTimeout={500}>
                     {form}
                 </CSSTransitionGroup>

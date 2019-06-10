@@ -3,11 +3,12 @@ import { Field, reduxForm } from 'redux-form';
 
 class ShippingAddressForm extends Component{
 
-    renderInput = ({input,label}) => {
+    renderInput = ({input,label,type,meta: { touched, error, warning }}) => {
         return(
             <div className="field">
                 <label>{label}</label>
-                <input {...input}/>
+                <input {...input} type={type} placeholder={label}/>
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
             </div>
         );
     }
@@ -20,8 +21,8 @@ class ShippingAddressForm extends Component{
         return(
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
                 <div className="two fields">
-                    <Field name="title" component={this.renderInput} label="Enter Title"/>
-                    <Field name="description" component={this.renderInput} label="Enter Description"/>
+                    <Field name="firstName" component={this.renderInput} label="Enter First Name" validate={[ required]} type="text"/>
+                    <Field name="lastName" component={this.renderInput} label="Enter Last Name" validate={[ required]} type="text"/>
                 </div>
                 <button>Submit</button>
             </form>
@@ -29,21 +30,8 @@ class ShippingAddressForm extends Component{
     }
 }
 
-const validateForm = (formValues) => {
-    const errors = {};
-
-    if (!formValues.title){
-        errors.title = 'You must enter a title';
-    }
-
-    if (!formValues.description){
-        errors.description = 'You must enter a description';
-    }
-
-    return errors;
-}
+const required = value => value ? undefined : 'Required'
 
 export default reduxForm({
-    form:  'shippingAddressForm',
-    validate: validateForm
+    form:  'shippingAddressForm'
 })(ShippingAddressForm)

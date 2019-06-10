@@ -5,7 +5,7 @@ class Confirmation extends Component{
         return(
             <div>
                 <h2>
-                    Step 3
+                    Step 3 - Confirmation
                 </h2>
             </div>
         )
