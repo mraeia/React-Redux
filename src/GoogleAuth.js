@@ -12,6 +12,15 @@ class GoogleAuth extends Component {
     }
 
     componentDidMount(){
+        const script = document.createElement("script");
+        script.src = "https://apis.google.com/js/platform.js";
+        script.async = true;
+        script.defer = true;
+        script.onload=this.initAuth;
+        document.head.appendChild(script);
+    }
+
+    initAuth = () => {
         window.gapi.load('client:auth2', () => {
             window.gapi.client.init({
                 clientId: '522123076229-o7iq4i1ui048pjvuedamsl58qpdlf3kv.apps.googleusercontent.com',
@@ -21,7 +30,8 @@ class GoogleAuth extends Component {
                 this.onAuthChange();
                 this.auth.isSignedIn.listen(this.onAuthChange);
             })
-        })  
+        })
+
     }
 
     onAuthChange(){

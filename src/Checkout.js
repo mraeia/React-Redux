@@ -3,6 +3,7 @@ import ShippingAddress from './Checkout/ShippingAddress'
 import PaymentCard from './Checkout/PaymentCard'
 import Confirmation from './Checkout/Confirmation'
 import {Statuses} from './Checkout/Constants'
+import StepsWrapper from './Checkout/StepsWrapper';
 
 class Checkout extends Component {
 
@@ -46,9 +47,15 @@ class Checkout extends Component {
     render(){
         return (
             <div>
-                <ShippingAddress status={this.state.shippingAddress} submitShipping={this.submitShipping} edit={this.edit}/>
-                <PaymentCard status={this.state.paymentCard} submitPayment={this.submitPayment} edit={this.edit}/>
-                <Confirmation status={this.state.Confirmation}/>
+                <StepsWrapper>
+                    <ShippingAddress status={this.state.shippingAddress} submitShipping={this.submitShipping} edit={this.edit}/>
+                </StepsWrapper>
+                <StepsWrapper>
+                    <PaymentCard status={this.state.paymentCard} submitPayment={this.submitPayment} edit={this.edit}/>
+                </StepsWrapper>
+                <StepsWrapper>
+                    <Confirmation status={this.state.Confirmation}/>
+                </StepsWrapper>
             </div>
         );
     }
